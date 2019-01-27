@@ -15,9 +15,9 @@ body  {
 <body>
 <center>
 <h5>File {{ inputfilename }} uploaded successfully.</h5> <br>
-    HASH Value: <input type="text" name="hvalue"  size= '40' value= {{ hash_value }}><br><br>
      <form id="verify-form" action="{{ url_for('verify') }}" method="POST" enctype="multipart/form-data">
-         Upload a new_file/old_file:  <input id="file-picker" type="file" name="file"  multiple><br>
+         HASH Value: <input type="text" name="hvalue"  size= '40' value= {{ hash_value }}><br><br><br>
+         <h4>Upload a new_file/old_file:</h4>  <input id="file-picker" type="file" name="file"  multiple><br>
             <div id="msg"></div><br>
             <input type="submit" value="Verify!" id="verify-button">
         </form>

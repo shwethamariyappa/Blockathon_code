@@ -29,7 +29,7 @@ def smart_contract_client(data=None, action=None, txn_id=None):
             'gas': 2000000,
             'nonce': nonce,
             'chainId': 3,
-            'gasPrice': w3.toWei('7', 'gwei')
+            'gasPrice': w3.toWei('4', 'gwei')
         }
         signed_txn = w3.eth.account.signTransaction(txn_dict,
                                                     wallet_private_key)
@@ -54,9 +54,9 @@ def smart_contract_client(data=None, action=None, txn_id=None):
         result = w3.eth.getTransaction(txn_id)['input']
         verification_string = '0x'+ data
         if result == verification_string:
-            return True
+            return 1
         else:
-            return False
+            return 0
         """
         txn_dict = contract.functions.getresult(block_hash).buildTransaction({
         'chainId': 3,

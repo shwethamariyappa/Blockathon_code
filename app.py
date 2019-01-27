@@ -30,12 +30,13 @@ def verify():
         f = request.files['file']
         filename = os.path.join('static/', secure_filename(f.filename))
         f.save(filename)
-        ntxn_id = request.form.get("hvalue")
+        ntxn_id = request.form['hvalue']
         print(ntxn_id)
         verification = hash_doc(filename, action='verify', txn_id=ntxn_id)
+        print(verification)
         res = jsonify({'verification': verification})
         res.status_code = 200
-        return  render_template("verify_File.html", ver_value=verification, inputfilename=f.filename)
+        return  render_template("verify_File.html", ver_value=verification)
 
 
 if __name__ == '__main__':

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+     <style>
+body  {
+    background-image: url("/static/Blockchain.jpg");
+    background-color: #cccccc;
+    background-size: 100%;
+}
+
+</style>
+</head>
+<body>
+
+   {% if ver_value == True %}
+Control:  &#x2611; Data Ok!
+    {% endif %}
+    {% if ver_value == Flase %}
+Control:  &#x2612; Data Not Ok! [Data Changed]
+    {% endif %}
+</body>
+</html>
